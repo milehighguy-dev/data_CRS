@@ -1,0 +1,39 @@
+ucft
+{
+    REQN
+    {
+        "config"
+        "ingame_movies"	
+    }
+
+    REQN
+    {
+        "script"
+        "setup_teams"
+        "gametype_conquest"
+        "gametype_capture"
+        "Objective"
+        "MultiObjectiveContainer"
+        "ObjectiveCTF"
+        "ObjectiveAssault"
+        "ObjectiveSpaceAssault"
+        "ObjectiveConquest" 
+        "ObjectiveTDM"
+        "ObjectiveOneFlagCTF"
+	"SoundEvent_ctf"
+        "ObjectiveGoto"        
+        "LinkedShields"
+        "LinkedDestroyables"
+        "LinkedTurrets"
+        "Ambush"
+        "PlayMovieWithTransition"
+        "ifs_cross_era_instant_ops"
+    }
+
+    REQN
+    {
+        "lvl"
+        "CRSg_con"
+        "CRSc_con"
+    }
+}

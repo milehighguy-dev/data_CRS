@@ -1,0 +1,12 @@
+ucft
+{
+    
+    REQN
+    {
+        "script"
+		"custom_gc_6"
+        "crs_instant_option_override"
+        "game_testscript"
+    }
+
+}

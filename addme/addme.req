@@ -1,0 +1,9 @@
+ucft
+{
+  REQN
+  {
+    "script"
+    "addme"
+    "ifs_cross_era_instant_ops"
+  }
+}
