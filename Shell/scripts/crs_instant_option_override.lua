@@ -18,20 +18,68 @@
 -- requires the v1.3 patch or higher
 
 
+--Load the code that will define the buttons on the new option page
+ScriptCB_DoFile("crs_option_buttons")
+
+
 --TODO: current issue: button layout on ifs_instant_options screen
 
 print("DEBUG: loaded crs_instant_option_override.lua")
 
 
-local override_missionSelect = function()
-    print("DEBUG: override ifs_missionselect")
+--TODO, seems like this is unnecessary, can just put in instant options fn
+local override_missionSelect_pcMulti_pre = function()
+    print("DEBUG: override ifs_missionselect_pcMulti (pre)")
 
-    --Add our new button
+    table.insert(gPCMultiPlayerSettingsTabsLayout,
+            { tag = "_opt_cross", string = "ifs.instantoptions.buttons.settings.cross" })
 
-    table.insert(ifs_ioo_OptionButton_layout.buttonlist,
-            { tag = "cross", string = "ifs.instantoptions.buttons.layout.cross" })
 
-    -- redefine this function to make it clickable
+end
+
+local override_missionSelect_pcMulti_post = function()
+    print("DEBUG: override ifs_missionselect_pcMulti (post)")
+
+    --override functions called in the screens "enter" and "accept" functions
+
+    --TODO gPCMultiPlayerSettingsTabsLayout is missing xPos and yPos in ifs_instant_options
+    local setting_y_pos = 120
+    local setting_y_offset = 50
+    local setting_y_offset1 = 30
+    function ifs_missionselect_pcMulti_fnShowHostOptionButton(this, bHideButton)
+
+        local tab_number = 2
+        if (this == ifs_instant_options) then
+            tab_number = 3
+            print("DEBUG: fnShowHostOptionButton: this is ifs_instant_options")
+        elseif (this == ifs_missionselect) then
+            print("DEBUG: fnShowHostOptionButton: this is ifs_missionselect")
+        else
+            print("DEBUG: fnShowHostOptionButton: this is something else")
+        end
+
+        if (bHideButton == nil) then
+
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hero", tab_number, nil, setting_y_pos + setting_y_offset + (2) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_conquest", tab_number, nil, setting_y_pos + setting_y_offset + (3) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_ctf", tab_number, nil, setting_y_pos + setting_y_offset + (4) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_assault", tab_number, nil, setting_y_pos + setting_y_offset + (5) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hunt", tab_number, nil, setting_y_pos + setting_y_offset + (6) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_cross", tab_number, nil, setting_y_pos + setting_y_offset + (7) * setting_y_offset1)
+
+            ifelem_tabmanager_SetVisable(this, gPCMultiPlayerSettingsTabsLayout, "_opt_host", 1, tab_number)
+        else
+
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hero", tab_number, nil, setting_y_pos + setting_y_offset + (1) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_conquest", tab_number, nil, setting_y_pos + setting_y_offset + (2) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_ctf", tab_number, nil, setting_y_pos + setting_y_offset + (3) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_assault", tab_number, nil, setting_y_pos + setting_y_offset + (4) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hunt", tab_number, nil, setting_y_pos + setting_y_offset + (5) * setting_y_offset1)
+            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_cross", tab_number, nil, setting_y_pos + setting_y_offset + (7) * setting_y_offset1)
+
+            ifelem_tabmanager_SetVisable(this, gPCMultiPlayerSettingsTabsLayout, "_opt_host", nil, tab_number)
+        end
+    end
 
     local USING_NEW_PC_SHELL = 1
     function ifs_missionselect_pcMulti_fnClickOptionButtons(this)
@@ -84,98 +132,25 @@ local override_missionSelect = function()
         end
     end
 
-    --Redo functions called in ifs_missionselect_pcMulti_fnBuildScreen
+    --fixes button placement
+    ifs_missionselect_pcMulti_fnChangeSettingTabsLayout(ifs_missionselect_pcMulti)
 
-    print("DEBUG: gPCMultiPlayerSettingsTabsLayout - point 2")
-    tprint(gPCMultiPlayerSettingsTabsLayout)
+end
 
-    --fixes layout in ifs_missionselect, otherwise button is off like it still is in ifs_instant_options
-    --TODO, fix Y spacing based on previous tab's spacing
-    ifs_missionselect_pcMulti_fnChangeSettingTabsLayout(ifs_missionselect)
+local override_missionSelect = function()
+    print("DEBUG: override ifs_missionselect")
 
-    print("DEBUG: gPCMultiPlayerSettingsTabsLayout - point 3")
-    tprint(gPCMultiPlayerSettingsTabsLayout)
+    --Add our new button
+
+    table.insert(ifs_ioo_OptionButton_layout.buttonlist,
+            { tag = "cross", string = "ifs.instantoptions.buttons.layout.cross" })
+
 
     -- create the specific tab we need which would have been done in ifs_missionselect_pcMulti_fnBuildScreen in ifelem_tabmanager_Create
     ifs_missionselect._Tabs2 = ifelem_tabmanager_DoCreateTabs(gPCMultiPlayerSettingsTabsLayout)
 
     --did this do anything?
     --ifs_missionselect_pcMulti_fnAddOptionButtons(ifs_missionselect, false)
-
-
-    --add the button to this function
-
-    --TODO gPCMultiPlayerSettingsTabsLayout is missing xPos and yPos in ifs_instant_options
-    local setting_width = 170
-    local setting_x_pos = 100
-    local setting_y_pos = 120
-    local setting_y_offset = 50
-    local setting_y_offset1 = 30
-    function ifs_missionselect_pcMulti_fnShowHostOptionButton(this, bHideButton)
-        --	if(this.option_buttons == nil or this.option_buttons.host_btn == nil) then
-        --		return
-        --	end
-
-        --print("DEBUG: printing this ")
-        --tprint(this)
-
-        local option_buttons_offset_y = 30
-        local option_buttons_offset_y1 = 20
-        local option_buttons_width = 150
-        local option_buttons_height = ScriptCB_GetFontHeight("gamefont_medium")
-
-        local tab_number = 2
-        if (this == ifs_instant_options) then
-            tab_number = 3
-            print("DEBUG: fnShowHostOptionButton: this is ifs_instant_options")
-        elseif (this == ifs_missionselect) then
-            print("DEBUG: fnShowHostOptionButton: this is ifs_missionselect")
-        else
-            print("DEBUG: fnShowHostOptionButton: this is something else")
-        end
-
-        if (bHideButton == nil) then
-            --IFObj_fnSetPos(this.option_buttons.host_btn,this.option_buttons.host_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 2)
-            --IFObj_fnSetPos(this.option_buttons.hero_btn,this.option_buttons.hero_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 3)
-            --IFObj_fnSetPos(this.option_buttons.conquest_btn,this.option_buttons.conquest_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 4)
-            --IFObj_fnSetPos(this.option_buttons.ctf_btn,this.option_buttons.ctf_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 5)
-            --IFObj_fnSetPos(this.option_buttons.assault_btn,this.option_buttons.assault_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 6)
-            --IFObj_fnSetPos(this.option_buttons.hunt_btn,this.option_buttons.hunt_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 7)
-
-            --this.option_buttons.host_btn.bDimmed = nil
-            --IFObj_fnSetAlpha(this.option_buttons.host_btn,1)
-            --IFObj_fnSetAlpha(this.option_buttons.host_btn.label,1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hero", tab_number, nil, setting_y_pos + setting_y_offset + (2) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_conquest", tab_number, nil, setting_y_pos + setting_y_offset + (3) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_ctf", tab_number, nil, setting_y_pos + setting_y_offset + (4) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_assault", tab_number, nil, setting_y_pos + setting_y_offset + (5) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hunt", tab_number, nil, setting_y_pos + setting_y_offset + (6) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_cross", tab_number, nil, setting_y_pos + setting_y_offset + (7) * setting_y_offset1)
-
-            ifelem_tabmanager_SetVisable(this, gPCMultiPlayerSettingsTabsLayout, "_opt_host", 1, tab_number)
-        else
-            --IFObj_fnSetPos(this.option_buttons.hero_btn,this.option_buttons.hero_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 2)
-            --IFObj_fnSetPos(this.option_buttons.conquest_btn,this.option_buttons.conquest_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 3)
-            --IFObj_fnSetPos(this.option_buttons.ctf_btn,this.option_buttons.ctf_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 4)
-            --IFObj_fnSetPos(this.option_buttons.assault_btn,this.option_buttons.assault_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 5)
-            --IFObj_fnSetPos(this.option_buttons.hunt_btn,this.option_buttons.hunt_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 6)
-            --IFObj_fnSetPos(this.option_buttons.host_btn,this.option_buttons.host_btn.x,option_buttons_offset_y1 + option_buttons_offset_y * 7)
-
-            --this.option_buttons.host_btn.bDimmed = 1
-            --IFObj_fnSetAlpha(this.option_buttons.host_btn,0)
-            --IFObj_fnSetAlpha(this.option_buttons.host_btn.label,0)
-            --this.option_buttons.host_btn.y = option_buttons_offset_y1 + option_buttons_offset_y * 2
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hero", tab_number, nil, setting_y_pos + setting_y_offset + (1) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_conquest", tab_number, nil, setting_y_pos + setting_y_offset + (2) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_ctf", tab_number, nil, setting_y_pos + setting_y_offset + (3) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_assault", tab_number, nil, setting_y_pos + setting_y_offset + (4) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_hunt", tab_number, nil, setting_y_pos + setting_y_offset + (5) * setting_y_offset1)
-            ifelem_tabmanager_SetPos(this, gPCMultiPlayerSettingsTabsLayout, "_opt_cross", tab_number, nil, setting_y_pos + setting_y_offset + (7) * setting_y_offset1)
-
-            ifelem_tabmanager_SetVisable(this, gPCMultiPlayerSettingsTabsLayout, "_opt_host", nil, tab_number)
-        end
-    end
-
 
 end
 
@@ -185,28 +160,26 @@ local override_instantOptions = function()
 
     -- add the new option button
 
-    table.insert(gPCMultiPlayerSettingsTabsLayout,
-            { tag = "_opt_cross", string = "ifs.instantoptions.buttons.settings.cross" })
-
     ifs_io_listtags_cross = {
         title = "ifs.instantoptions.buttons.cross",
         tags = {
             "cross_team1",
             "cross_team2"
-            --"con_numbots",
-            --"con_mult",
-            --"con_timer",   --new
         }
     }
+    --these functions reference the page tags
+    -- ifs_io_changeFunc
+    -- ifs_io_GetRealValueFor
+    -- ifs_io_GetElementLayoutFor
+    -- ifs_instant_options_PopulateItem
+    -- ifs_instant_options_fnAdjustItem
+    -- how is it 5 different functions...
 
     ifs_io_listtags["cross"] = ifs_io_listtags_cross
 
     -- Do things that usually happen in ifs_instant_options_fnBuildScreen
 
     ifs_missionselect_pcMulti_fnAddOptionButtons(ifs_instant_options)
-
-    print("DEBUG: gPCMultiPlayerSettingsTabsLayout - point 1")
-    tprint(gPCMultiPlayerSettingsTabsLayout)
 
      -- from ifelem_tabmanager_Create in ifs_instant_options_fnBuildScreen
     ifs_instant_options._Tabs3 = ifelem_tabmanager_DoCreateTabs(gPCMultiPlayerSettingsTabsLayout)
@@ -215,34 +188,39 @@ local override_instantOptions = function()
     Form_CreateVertical(ifs_instant_options.screens["cross"], ifs_io_GetLayoutFor(ifs_io_listtags["cross"], ifs_instant_options))
     IFObj_fnSetVis(ifs_instant_options.screens["cross"], 1)
 
-
-
-    --- ifs_instant_options_overview
-    --ifs_instant_options_overview.CurButton = AddVerticalButtons(ifs_instant_options_overview.buttons, ifs_ioo_OptionButton_layout)
 end
 
 if AddIFScreen then
 
     print("DEBUG: AddIFScreen is defined, overriding")
 
-    crs_originalAddIfScreen = AddIFScreen
+    local crs_originalAddIfScreen = AddIFScreen
     AddIFScreen = function(tableName, ScreenName)
         --print("DEBUG: AddIFScreen " .. tostring(ScreenName))
-        if (ScreenName == "ifs_instant_options") then
+        if (ScreenName == "ifs_missionselect_pcMulti") then
+            -- override functions AFTER original definition
+            -- otherwise our changes will get lost when the original script loads
+            override_missionSelect_pcMulti_pre()
+            crs_originalAddIfScreen(tableName, ScreenName)
+            override_missionSelect_pcMulti_post()
+        elseif (ScreenName == "ifs_instant_options") then
             -- this gets called first in the load order
             override_instantOptions()
+            crs_originalAddIfScreen(tableName, ScreenName)
         elseif (ScreenName == "ifs_missionselect") then
             -- this gets called second
             override_missionSelect()
+            crs_originalAddIfScreen(tableName, ScreenName)
+        else
+            crs_originalAddIfScreen(tableName, ScreenName)
         end
-        crs_originalAddIfScreen(tableName, ScreenName)
     end
 
 else
     print("DEBUG: AddIFScreen is not defined yet!")
 end
 
-gOriginalPushScreen = ScriptCB_PushScreen
+local gOriginalPushScreen = ScriptCB_PushScreen
 
 ScriptCB_PushScreen = function(screen)
     print("DEBUG: ScriptCB_PushScreen " .. tostring(screen))
@@ -254,7 +232,7 @@ ScriptCB_PushScreen = function(screen)
     end
 end
 
-gOriginalSetScreen = ScriptCB_SetIFScreen
+local gOriginalSetScreen = ScriptCB_SetIFScreen
 ScriptCB_SetIFScreen = function(screen)
     if screen then
         print("DEBUG: ScriptCB_SetIFScreen " .. tostring(screen))

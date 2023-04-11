@@ -6,6 +6,7 @@ ucft
         "script"
 		"custom_gc_6"
         "crs_instant_option_override"
+        "crs_option_buttons"
         "game_testscript"
     }
 
