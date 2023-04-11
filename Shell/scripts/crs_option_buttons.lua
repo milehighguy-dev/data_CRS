@@ -8,14 +8,19 @@
 
 add_crs_buttons = function()
 
+    print("DEBUG: overriding ifs_instant_options buttons")
 
-    --TODO fix values, trying to read pref values that don't exist
+    --TODO: get dropdowns to display
+    --TODO: change hero values to faction names
+    --TODO: pass faction name to mission script
+    -- use remaster DB ?
 
     local original_ifs_io_changeFunc = ifs_io_changeFunc
     ifs_io_changeFunc = function(form, element)
         original_ifs_io_changeFunc(form, element)
         local this = ifs_instant_options
 
+        print("DEBUG: buttons: ifs_io_changeFunc")
         -- cross era opts
         if (element.tag == "cross_team1") then
             if(element.selValue == 1) then
@@ -39,6 +44,8 @@ add_crs_buttons = function()
     local original_ifs_io_GetRealValueFor = ifs_io_GetRealValueFor
     ifs_io_GetRealValueFor = function(form, tag)
         original_ifs_io_GetRealValueFor(form, tag)
+
+        print("DEBUG: buttons: ifs_io_GetRealValueFor")
 
         local this = ifs_instant_options
 
@@ -80,6 +87,8 @@ add_crs_buttons = function()
     ifs_io_GetElementLayoutFor = function(tagName, screen)
         local tagTable = original_ifs_io_GetElementLayoutFor(tagName, screen)
 
+        print("DEBUG: buttons: ifs_io_GetElementLayoutFor")
+
         if tagTable == nil then
             tagTable = {}
         end
@@ -110,6 +119,8 @@ add_crs_buttons = function()
 
     local original_ifs_instant_options_PopulateItem = ifs_instant_options_PopulateItem
     ifs_instant_options_PopulateItem = function(Dest, Tag, bSelected, iColorR, iColorG, iColorB, fAlpha)
+
+        print("DEBUG: buttons: ifs_instant_options_PopulateItem")
 
         local this = ifs_instant_options
         local ShowStr = Tag
@@ -168,6 +179,8 @@ add_crs_buttons = function()
     local original_ifs_instant_options_fnAdjustItem = ifs_instant_options_fnAdjustItem
     ifs_instant_options_fnAdjustItem = function(this, Tag, iAdjust)
 
+        print("DEBUG: buttons: ifs_instant_options_fnAdjustItem")
+
         --TODO fix pref values
         if (Tag == "cross_team1") then
             if (this.HeroPrefs.iHeroPlayer == 1) then
@@ -202,6 +215,8 @@ add_crs_buttons = function()
                 end
             end
         end
+
+        original_ifs_instant_options_fnAdjustItem(this, Tag, iAdjust)
     end
 
 end

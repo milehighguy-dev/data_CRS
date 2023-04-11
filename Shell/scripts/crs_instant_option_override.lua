@@ -22,23 +22,14 @@
 ScriptCB_DoFile("crs_option_buttons")
 
 
---TODO: current issue: button layout on ifs_instant_options screen
 
 print("DEBUG: loaded crs_instant_option_override.lua")
 
-
---TODO, seems like this is unnecessary, can just put in instant options fn
-local override_missionSelect_pcMulti_pre = function()
+local override_missionSelect_pcMulti = function()
     print("DEBUG: override ifs_missionselect_pcMulti (pre)")
 
     table.insert(gPCMultiPlayerSettingsTabsLayout,
             { tag = "_opt_cross", string = "ifs.instantoptions.buttons.settings.cross" })
-
-
-end
-
-local override_missionSelect_pcMulti_post = function()
-    print("DEBUG: override ifs_missionselect_pcMulti (post)")
 
     --override functions called in the screens "enter" and "accept" functions
 
@@ -137,24 +128,6 @@ local override_missionSelect_pcMulti_post = function()
 
 end
 
-local override_missionSelect = function()
-    print("DEBUG: override ifs_missionselect")
-
-    --Add our new button
-
-    table.insert(ifs_ioo_OptionButton_layout.buttonlist,
-            { tag = "cross", string = "ifs.instantoptions.buttons.layout.cross" })
-
-
-    -- create the specific tab we need which would have been done in ifs_missionselect_pcMulti_fnBuildScreen in ifelem_tabmanager_Create
-    ifs_missionselect._Tabs2 = ifelem_tabmanager_DoCreateTabs(gPCMultiPlayerSettingsTabsLayout)
-
-    --did this do anything?
-    --ifs_missionselect_pcMulti_fnAddOptionButtons(ifs_missionselect, false)
-
-end
-
---TODO new button is misaligned in ifs_instant_options screen
 local override_instantOptions = function()
     print("DEBUG: override ifs_instant_options")
 
@@ -190,6 +163,23 @@ local override_instantOptions = function()
 
 end
 
+local override_missionSelect = function()
+    print("DEBUG: override ifs_missionselect")
+
+    --Add our new button
+
+    table.insert(ifs_ioo_OptionButton_layout.buttonlist,
+            { tag = "cross", string = "ifs.instantoptions.buttons.layout.cross" })
+
+
+    -- create the specific tab we need which would have been done in ifs_missionselect_pcMulti_fnBuildScreen in ifelem_tabmanager_Create
+    ifs_missionselect._Tabs2 = ifelem_tabmanager_DoCreateTabs(gPCMultiPlayerSettingsTabsLayout)
+
+    --did this do anything?
+    --ifs_missionselect_pcMulti_fnAddOptionButtons(ifs_missionselect, false)
+
+end
+
 if AddIFScreen then
 
     print("DEBUG: AddIFScreen is defined, overriding")
@@ -198,17 +188,13 @@ if AddIFScreen then
     AddIFScreen = function(tableName, ScreenName)
         --print("DEBUG: AddIFScreen " .. tostring(ScreenName))
         if (ScreenName == "ifs_missionselect_pcMulti") then
-            -- override functions AFTER original definition
-            -- otherwise our changes will get lost when the original script loads
-            override_missionSelect_pcMulti_pre()
+            override_missionSelect_pcMulti()
             crs_originalAddIfScreen(tableName, ScreenName)
-            override_missionSelect_pcMulti_post()
         elseif (ScreenName == "ifs_instant_options") then
-            -- this gets called first in the load order
             override_instantOptions()
+            add_crs_buttons()
             crs_originalAddIfScreen(tableName, ScreenName)
         elseif (ScreenName == "ifs_missionselect") then
-            -- this gets called second
             override_missionSelect()
             crs_originalAddIfScreen(tableName, ScreenName)
         else
