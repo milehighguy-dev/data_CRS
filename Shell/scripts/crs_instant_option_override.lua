@@ -159,7 +159,7 @@ local override_instantOptions = function()
 
     ifs_instant_options.screens["cross"] = NewIFContainer {}
     Form_CreateVertical(ifs_instant_options.screens["cross"], ifs_io_GetLayoutFor(ifs_io_listtags["cross"], ifs_instant_options))
-    IFObj_fnSetVis(ifs_instant_options.screens["cross"], 1)
+    IFObj_fnSetVis(ifs_instant_options.screens["cross"], nil)
 
 end
 
@@ -191,8 +191,8 @@ if AddIFScreen then
             override_missionSelect_pcMulti()
             crs_originalAddIfScreen(tableName, ScreenName)
         elseif (ScreenName == "ifs_instant_options") then
-            override_instantOptions()
             add_crs_buttons()
+            override_instantOptions()
             crs_originalAddIfScreen(tableName, ScreenName)
         elseif (ScreenName == "ifs_missionselect") then
             override_missionSelect()

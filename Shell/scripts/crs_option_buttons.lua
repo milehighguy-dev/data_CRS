@@ -15,6 +15,7 @@ add_crs_buttons = function()
     --TODO: pass faction name to mission script
     -- use remaster DB ?
 
+    --called when you change a radio button
     local original_ifs_io_changeFunc = ifs_io_changeFunc
     ifs_io_changeFunc = function(form, element)
         original_ifs_io_changeFunc(form, element)
@@ -41,11 +42,12 @@ add_crs_buttons = function()
         end
     end
 
+    --called in Enter fn for ifs_instant_options
     local original_ifs_io_GetRealValueFor = ifs_io_GetRealValueFor
     ifs_io_GetRealValueFor = function(form, tag)
         original_ifs_io_GetRealValueFor(form, tag)
 
-        print("DEBUG: buttons: ifs_io_GetRealValueFor")
+        print("DEBUG: buttons: ifs_io_GetRealValueFor " .. tostring(tag))
 
         local this = ifs_instant_options
 
@@ -83,40 +85,51 @@ add_crs_buttons = function()
         end
     end
 
+    --TODO: have not seen the below functions called in the logs
+
+    print("DEBUG: ifs_io_GetElementLayoutFor is " .. tostring(ifs_io_GetElementLayoutFor))
+    --This is called in ifs_instant_options build screen
     local original_ifs_io_GetElementLayoutFor = ifs_io_GetElementLayoutFor
     ifs_io_GetElementLayoutFor = function(tagName, screen)
+        print("DEBUG: buttons: ifs_io_GetElementLayoutFor: tag name is " .. tostring(tagName))
+
         local tagTable = original_ifs_io_GetElementLayoutFor(tagName, screen)
 
-        print("DEBUG: buttons: ifs_io_GetElementLayoutFor")
+        print("DEBUG: buttons: ifs_io_GetElementLayoutFor, AFTER original fn")
 
         if tagTable == nil then
             tagTable = {}
         end
 
+        print("DEBUG: buttons: ifs_io_GetElementLayoutFor: printing table")
+        tprint(tagTable)
         local this = screen
 
         local factions = { "Republic", "CIS", "Empire", "Rebels" }
 
         --Do stuff with new buttons
         if (tagName == "cross_team1") then
-            tagTable.myTitle = "Team 1"
-            tagTable.myControl = "dropdown"
-            tagTable.mySelValue = 1
-            tagTable.myValues = factions
-        elseif (tagName == "cross_team1") then
-            tagTable.myTitle = "Team 2"
-            tagTable.myControl = "dropdown"
-            tagTable.mySelValue = 2
-            tagTable.myValues = factions
+            tagTable.title = "Team 1"
+            tagTable.control = "dropdown"
+            tagTable.selValue = 1
+            tagTable.values = factions
+        elseif (tagName == "cross_team2") then
+            tagTable.title = "Team 2"
+            tagTable.control = "dropdown"
+            tagTable.selValue = 2
+            tagTable.values = factions
         end
 
-        if (tagTable.myControl ~= "radio") then
-            tagTable. myFnChanged = ifs_io_changeFunc
+        if (tagTable.control ~= "radio") then
+            tagTable.fnChanged = ifs_io_changeFunc
         end
 
+        print("DEBUG: buttons: ifs_io_GetElementLayoutFor: printing table AFTER modification")
+        tprint(tagTable)
         return tagTable
     end
 
+    --called in ifs_instant_options_layout
     local original_ifs_instant_options_PopulateItem = ifs_instant_options_PopulateItem
     ifs_instant_options_PopulateItem = function(Dest, Tag, bSelected, iColorR, iColorG, iColorB, fAlpha)
 
@@ -176,6 +189,7 @@ add_crs_buttons = function()
         original_ifs_instant_options_PopulateItem(Dest, Tag, bSelected, iColorR, iColorG, iColorB, fAlpha)
     end
 
+    --called in input functions to ifs_instant_options
     local original_ifs_instant_options_fnAdjustItem = ifs_instant_options_fnAdjustItem
     ifs_instant_options_fnAdjustItem = function(this, Tag, iAdjust)
 
