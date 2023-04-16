@@ -32,10 +32,10 @@ add_crs_buttons = function()
 
     print("DEBUG: overriding ifs_instant_options buttons")
 
-    --TODO: get dropdowns to display
-    --TODO: change hero values to faction names
     --TODO: pass faction name to mission script
     -- use remaster DB ?
+    -- use mission setup?
+    -- use save file?
 
     --choose what setting to set based on selection
     --called when you change a radio button
