@@ -33,7 +33,6 @@ local override_missionSelect_pcMulti = function()
 
     --override functions called in the screens "enter" and "accept" functions
 
-    --TODO gPCMultiPlayerSettingsTabsLayout is missing xPos and yPos in ifs_instant_options
     local setting_y_pos = 120
     local setting_y_offset = 50
     local setting_y_offset1 = 30
@@ -162,6 +161,8 @@ local override_instantOptions = function()
     IFObj_fnSetVis(ifs_instant_options.screens["cross"], nil)
 
     --Update the mission setup with our choices
+    --use this function because it also pushes the preferences on exit,
+    --we want the same behavior
     local original_ifs_instant_options_exit = ifs_instant_options.Exit
     ifs_instant_options.Exit = function(this, bFwd)
         original_ifs_instant_options_exit(this, bFwd)

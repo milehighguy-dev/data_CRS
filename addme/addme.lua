@@ -22,6 +22,10 @@ sp_missionselect_listbox_contents[sp_n+1] = { isModLevel = 1, mapluafile = "CRS%
 mp_n = table.getn(mp_missionselect_listbox_contents)
 mp_missionselect_listbox_contents[mp_n+1] = sp_missionselect_listbox_contents[sp_n+1]
 
+
+AddNewGameModes( sp_missionselect_listbox_contents, "tat2%s_%s", {era_v = 1, mode_con_v = 1,} )
+AddNewGameModes( mp_missionselect_listbox_contents, "tat2%s_%s", {era_v = 1, mode_con_v = 1,} )
+
 -- associate this mission name with the current downloadable content directory
 -- (this tells the engine which maps are downloaded, so you need to include all new mission lua's here)
 -- first arg: mapluafile from above
@@ -30,6 +34,7 @@ mp_missionselect_listbox_contents[mp_n+1] = sp_missionselect_listbox_contents[sp
 
 AddDownloadableContent("CRS","CRSc_con",4)
 AddDownloadableContent("CRS","CRSv_con",4)
+AddDownloadableContent("tat2","tat2v_con",4)
 
 -- all done
 newEntry = nil
