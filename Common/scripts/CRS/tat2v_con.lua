@@ -1,6 +1,7 @@
 --
 -- Copyright (c) 2005 Pandemic Studios, LLC. All rights reserved.
 --
+ScriptCB_DoFile("dynamic_teams")
 ScriptCB_DoFile("setup_teams")
 ScriptCB_DoFile("ObjectiveConquest")
 
@@ -47,9 +48,6 @@ end
 
 
 function ScriptInit()
-
-    print("DEBUG: in custom tat2")
-
     -- Designers, these two lines *MUST* be first!
     StealArtistHeap(256*1024)
     SetPS2ModelMemory(2097152 + 65536 * 10)
@@ -65,30 +63,32 @@ DEF = 2
 
 
 
-    SetTeamAggressiveness(REP, 0.95)
-    SetTeamAggressiveness(CIS, 0.95)
+    SetTeamAggressiveness(1, 0.95)
+    SetTeamAggressiveness(2, 0.95)
 
     SetMaxFlyHeight(40)
 	SetMaxPlayerFlyHeight(40)
 
     ReadDataFile("sound\\tat.lvl;tat2cw")
-    ReadDataFile("SIDE\\rep.lvl",
-                        "rep_inf_ep3_rocketeer",
-                        "rep_inf_ep3_rifleman",
-                        "rep_inf_ep3_sniper",
-                        "rep_inf_ep3_engineer",
-                        "rep_inf_ep3_jettrooper",
-                        "rep_inf_ep3_officer",
-                        "rep_hero_obiwan")
+    --ReadDataFile("sound\\tat.lvl;tat2gcw")
+
+    --ReadDataFile("SIDE\\rep.lvl",
+    --                    "rep_inf_ep3_rocketeer",
+    --                    "rep_inf_ep3_rifleman",
+    --                    "rep_inf_ep3_sniper",
+    --                    "rep_inf_ep3_engineer",
+    --                    "rep_inf_ep3_jettrooper",
+    --                    "rep_inf_ep3_officer",
+    --                    "rep_hero_obiwan")
                 
-    ReadDataFile("SIDE\\cis.lvl",
-                    "cis_inf_rifleman",
-                    "cis_inf_rocketeer",
-                    "cis_inf_engineer",
-                    "cis_inf_sniper",
-                    "cis_inf_officer",
-                    "cis_hero_darthmaul",
-                    "cis_inf_droideka")
+    --ReadDataFile("SIDE\\cis.lvl",
+    --                "cis_inf_rifleman",
+    --                "cis_inf_rocketeer",
+    --                "cis_inf_engineer",
+    --                "cis_inf_sniper",
+    --                "cis_inf_officer",
+    --                "cis_hero_darthmaul",
+    --                "cis_inf_droideka")
  
     ReadDataFile("SIDE\\des.lvl",
                              "tat_inf_jawa")
@@ -97,33 +97,35 @@ DEF = 2
 						"tur_bldg_tat_barge",	
 						"tur_bldg_laser")	
 
-    SetAttackingTeam(ATT)
+    --SetAttackingTeam(ATT)
 
-	SetupTeams{
-		rep = {
-			team = REP,
-			units = 28,
-			reinforcements = 150,
-			soldier	= { "rep_inf_ep3_rifleman",9, 25},
-			assault	= { "rep_inf_ep3_rocketeer",1,4},
-			engineer = { "rep_inf_ep3_engineer",1,4},
-			sniper	= { "rep_inf_ep3_sniper",1,4},
-			officer = {"rep_inf_ep3_officer",1,4},
-			special = { "rep_inf_ep3_jettrooper",1,4},
-			
-		},
-		cis = {
-			team = CIS,
-			units = 28,
-			reinforcements = 150,
-			soldier	= { "cis_inf_rifleman",9, 25},
-			assault	= { "cis_inf_rocketeer",1,4},
-			engineer = { "cis_inf_engineer",1,4},
-			sniper	= { "cis_inf_sniper",1,4},
-			officer = {"cis_inf_officer",1,4},
-			special = { "cis_inf_droideka",1,4},
-		}
-	}
+    print("tat2tc_con: about to add sides")
+    addDynamicSides("default", "tat2")
+	--SetupTeams{
+	--	rep = {
+	--		team = REP,
+	--		units = 28,
+	--		reinforcements = 150,
+	--		soldier	= { "rep_inf_ep3_rifleman",9, 25},
+	--		assault	= { "rep_inf_ep3_rocketeer",1,4},
+	--		engineer = { "rep_inf_ep3_engineer",1,4},
+	--		sniper	= { "rep_inf_ep3_sniper",1,4},
+	--		officer = {"rep_inf_ep3_officer",1,4},
+	--		special = { "rep_inf_ep3_jettrooper",1,4},
+	--
+	--	},
+	--	cis = {
+	--		team = CIS,
+	--		units = 28,
+	--		reinforcements = 150,
+	--		soldier	= { "cis_inf_rifleman",9, 25},
+	--		assault	= { "cis_inf_rocketeer",1,4},
+	--		engineer = { "cis_inf_engineer",1,4},
+	--		sniper	= { "cis_inf_sniper",1,4},
+	--		officer = {"cis_inf_officer",1,4},
+	--		special = { "cis_inf_droideka",1,4},
+	--	}
+	--}
 
     -- Jawas --------------------------
     SetTeamName (3, "locals")
@@ -135,8 +137,8 @@ DEF = 2
     SetTeamAsFriend(DEF,3)
 	-----------------------------------
     
-    SetHeroClass(CIS, "cis_hero_darthmaul")
-      SetHeroClass(REP, "rep_hero_obiwan")
+    --SetHeroClass(CIS, "cis_hero_darthmaul")
+    --  SetHeroClass(REP, "rep_hero_obiwan")
 
     --  Level Stats
     ClearWalkers()
@@ -174,15 +176,15 @@ DEF = 2
     
     voiceSlow = OpenAudioStream("sound\\global.lvl", "rep_unit_vo_slow")
     AudioStreamAppendSegments("sound\\global.lvl", "cis_unit_vo_slow", voiceSlow)
-    AudioStreamAppendSegments("sound\\global.lvl", "des_unit_vo_slow", voiceSlow)
+    AudioStreamAppendSegments("sound\\global.lvl", "des_unit_vo_slow", voiceSlow) --TODO append local side VO
     AudioStreamAppendSegments("sound\\global.lvl", "global_vo_slow", voiceSlow)
     
     voiceQuick = OpenAudioStream("sound\\global.lvl", "rep_unit_vo_quick")
-    AudioStreamAppendSegments("sound\\global.lvl", "cis_unit_vo_quick", voiceQuick)     
+    AudioStreamAppendSegments("sound\\global.lvl", "cis_unit_vo_quick", voiceQuick)
     
     OpenAudioStream("sound\\global.lvl",  "cw_music")
-    -- OpenAudioStream("sound\\global.lvl",  "global_vo_quick")
-    -- OpenAudioStream("sound\\global.lvl",  "global_vo_slow")
+     OpenAudioStream("sound\\global.lvl",  "global_vo_quick")
+     OpenAudioStream("sound\\global.lvl",  "global_vo_slow")
     OpenAudioStream("sound\\tat.lvl",  "tat2")
     OpenAudioStream("sound\\tat.lvl",  "tat2")
 
@@ -190,11 +192,11 @@ DEF = 2
     SetBleedingVoiceOver(REP, CIS, "rep_off_com_report_enemy_losing",   1)
     SetBleedingVoiceOver(CIS, REP, "cis_off_com_report_enemy_losing",   1)
     SetBleedingVoiceOver(CIS, CIS, "cis_off_com_report_us_overwhelmed", 1)
-    
+
     SetLowReinforcementsVoiceOver(REP, REP, "rep_off_defeat_im", .1, 1)
     SetLowReinforcementsVoiceOver(REP, CIS, "rep_off_victory_im", .1, 1)
     SetLowReinforcementsVoiceOver(CIS, CIS, "cis_off_defeat_im", .1, 1)
-    SetLowReinforcementsVoiceOver(CIS, REP, "cis_off_victory_im", .1, 1)    
+    SetLowReinforcementsVoiceOver(CIS, REP, "cis_off_victory_im", .1, 1)
 
     SetOutOfBoundsVoiceOver(1, "repleaving")
     SetOutOfBoundsVoiceOver(2, "cisleaving")
@@ -222,7 +224,7 @@ DEF = 2
     SetSoundEffect("SpawnDisplayBack",             "shell_menu_exit")
 
 
-    SetAttackingTeam(ATT)
+    --SetAttackingTeam(ATT)
 
     --  Camera Stats
     --Tat2 Mos Eisley

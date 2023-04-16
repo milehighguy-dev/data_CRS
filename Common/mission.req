@@ -27,7 +27,7 @@ ucft
         "LinkedTurrets"
         "Ambush"
         "PlayMovieWithTransition"
-        "ifs_cross_era_instant_ops"
+        "dynamic_teams"
     }
 
     REQN
