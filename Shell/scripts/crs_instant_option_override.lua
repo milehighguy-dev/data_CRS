@@ -161,6 +161,25 @@ local override_instantOptions = function()
     Form_CreateVertical(ifs_instant_options.screens["cross"], ifs_io_GetLayoutFor(ifs_io_listtags["cross"], ifs_instant_options))
     IFObj_fnSetVis(ifs_instant_options.screens["cross"], nil)
 
+    --Update the mission setup with our choices
+    local original_ifs_instant_options_exit = ifs_instant_options.Exit
+    ifs_instant_options.Exit = function(this, bFwd)
+        original_ifs_instant_options_exit(this, bFwd)
+        print("DEBUG: ifs_instant_options.Exit")
+
+        print("DEBUG: is mission setup saved? " .. tostring(ScriptCB_IsMissionSetupSaved()))
+        local missionSetup = ScriptCB_LoadMissionSetup()
+        if missionSetup == nil then
+            missionSetup = {}
+        end
+        missionSetup.crossEraEnabled = 1
+        missionSetup.attackerTeam = gCrossEra.attackerName
+        missionSetup.defenderTeam = gCrossEra.defenderName
+        ScriptCB_SaveMissionSetup(missionSetup)
+        print("DEBUG: mission setup saved!")
+
+    end
+
 end
 
 local override_missionSelect = function()
@@ -175,8 +194,6 @@ local override_missionSelect = function()
     -- create the specific tab we need which would have been done in ifs_missionselect_pcMulti_fnBuildScreen in ifelem_tabmanager_Create
     ifs_missionselect._Tabs2 = ifelem_tabmanager_DoCreateTabs(gPCMultiPlayerSettingsTabsLayout)
 
-    --did this do anything?
-    --ifs_missionselect_pcMulti_fnAddOptionButtons(ifs_missionselect, false)
 
 end
 

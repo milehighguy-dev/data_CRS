@@ -59,8 +59,6 @@ add_crs_buttons = function()
     ifs_io_GetRealValueFor = function(form, tag)
         original_ifs_io_GetRealValueFor(form, tag)
 
-        print("DEBUG: buttons: ifs_io_GetRealValueFor " .. tostring(tag))
-
         local this = ifs_instant_options
 
         local val = nil
@@ -106,14 +104,10 @@ add_crs_buttons = function()
 
         local tagTable = original_ifs_io_GetElementLayoutFor(tagName, screen)
 
-        print("DEBUG: buttons: ifs_io_GetElementLayoutFor, AFTER original fn")
-
         if tagTable == nil then
             tagTable = {}
         end
 
-        print("DEBUG: buttons: ifs_io_GetElementLayoutFor: printing table")
-        tprint(tagTable)
         local this = screen
 
 
@@ -140,8 +134,6 @@ add_crs_buttons = function()
             tagTable.fnChanged = ifs_io_changeFunc
         end
 
-        print("DEBUG: buttons: ifs_io_GetElementLayoutFor: printing table AFTER modification")
-        tprint(tagTable)
         return tagTable
     end
 

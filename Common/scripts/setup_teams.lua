@@ -11,6 +11,8 @@ function SetupTeams(sides)
     local teamItems = nil
     if ScriptCB_IsMissionSetupSaved() then
 		local missionSetup = ScriptCB_LoadMissionSetup()
+        print("DEBUG: loaded mission setup!")
+        print("DEBUG: attacker team is " .. tostring(missionSetup.attackerTeam))
         teamItems = missionSetup.units
     end
     
