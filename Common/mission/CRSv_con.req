@@ -1,0 +1,13 @@
+ucft
+{
+	REQN
+   	{
+        "config"
+       	"cor_movies"
+   	}
+	REQN
+	{
+		"script"
+		"CRSv_con"
+	}
+}

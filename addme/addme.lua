@@ -18,7 +18,7 @@ local sp_n = 0
 local mp_n = 0
 sp_n = table.getn(sp_missionselect_listbox_contents)
 
-sp_missionselect_listbox_contents[sp_n+1] = { isModLevel = 1, mapluafile = "CRS%s_%s", era_c = 1, mode_con_c  = 1,}
+sp_missionselect_listbox_contents[sp_n+1] = { isModLevel = 1, mapluafile = "CRS%s_%s", era_c = 1, era_v = 1, mode_con_c  = 1, mode_con_v  = 1}
 mp_n = table.getn(mp_missionselect_listbox_contents)
 mp_missionselect_listbox_contents[mp_n+1] = sp_missionselect_listbox_contents[sp_n+1]
 
@@ -28,8 +28,8 @@ mp_missionselect_listbox_contents[mp_n+1] = sp_missionselect_listbox_contents[sp
 -- second arg: mission script name
 -- third arg: level memory modifier.  the arg to LuaScript.cpp: DEFAULT_MODEL_MEMORY_PLUS(x)
 
-AddDownloadableContent("CRS","CRSg_con",4)
 AddDownloadableContent("CRS","CRSc_con",4)
+AddDownloadableContent("CRS","CRSv_con",4)
 
 -- all done
 newEntry = nil
