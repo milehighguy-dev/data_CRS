@@ -1,0 +1,50 @@
+ucft
+{
+	REQN
+	{
+		"bnk"
+		"align=2048"
+		"tat2cross"
+	}
+
+	REQN
+	{
+		"config"
+		"global_world"
+		"rep_unit_vo"
+		"cis_unit_vo"
+		"all_unit_vo"
+		"imp_unit_vo"
+		"des_unit_vo"
+		"global_vo"
+		"exp_obj"
+		"tat"
+		"tat2"
+		"tatcross_music_config"
+		"tatcross_music"
+		"wok_vo"
+		"cis_unit"
+		"rep_unit"
+		"all_unit"
+		"imp_unit"
+		"cw_foley_dirt_config"
+		"cw_foley_dirt"
+		"cw_foley_stone_config"
+		"cw_foley_stone"
+		"cw_foley_metal_config"
+		"cw_foley_metal"
+		"gcw_foley_dirt_config"
+		"gcw_foley_dirt"
+		"gcw_foley_metal_config"
+		"gcw_foley_metal"
+		"gcw_foley_stone_config"
+		"gcw_foley_stone"
+		"wok_foley_dirt_config"
+		"wok_foley_dirt"
+		"wok_foley_metal_config"
+		"wok_foley_metal"
+		"wok_foley_stone_config"
+		"wok_foley_stone"
+		"tat2cross_foley"
+	}
+}

@@ -1,0 +1,54 @@
+ucft
+{
+	REQN
+	{
+		"bnk"
+		"align=2048"
+		"hot1cross"
+	}
+
+	REQN
+	{
+		"config"
+		"global_world"
+		"hot_objective_vo"
+		"all_unit_vo"
+		"imp_unit_vo"
+		"cis_unit_vo"
+		"rep_unit_vo"
+		"global_vo"
+		"exp_obj"
+		"exp_obj_large"
+		"exp_obj_huge"
+		"hotcross_music_config"
+		"hotcross_music"
+		"hot1cross"
+		"wok_vo"
+		"hot1crosstrig"
+		"all_unit"
+		"imp_unit"
+		"cis_unit"
+		"rep_unit"
+		"gcw_foley_snow_config"
+		"gcw_foley_snow"
+		"gcw_foley_stone_config"
+		"gcw_foley_stone"
+		"gcw_foley_metal_config"
+		"gcw_foley_metal"
+		"wok_foley_snow_config"
+		"wok_foley_snow"
+		"wok_foley_stone_config"
+		"wok_foley_stone"
+		"wok_foley_metal_config"
+		"wok_foley_metal"
+		"cw_foley_snow_config"
+		"cw_foley_snow"
+		"cw_foley_stone_config"
+		"cw_foley_stone"
+		"cw_foley_metal_config"
+		"cw_foley_metal"
+		"hot1cross_foley"
+		"all_fly_snowspeeder"
+		"imp_walk_atboth"
+	}
+}

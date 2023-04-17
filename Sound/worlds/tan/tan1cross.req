@@ -1,0 +1,43 @@
+ucft
+{
+	REQN
+	{
+		"bnk"
+		"align=2048"
+		"tan1cross"
+	}
+
+	REQN
+	{
+		"config"
+		"global_world"
+		"tan_objective_vo"
+		"rep_unit_vo"
+		"cis_unit_vo"
+		"all_unit_vo"
+		"imp_unit_vo"
+		"global_vo"
+		"exp_obj"
+		"tancross_music_config"
+		"tancross_music"
+		"tan1"
+		"wok_vo"
+		"cis_unit"
+		"rep_unit"
+		"all_unit"
+		"imp_unit"
+		"cw_foley_stone_config"
+		"cw_foley_stone"
+		"cw_foley_metal_config"
+		"cw_foley_metal"
+		"gcw_foley_stone_config"
+		"gcw_foley_stone"
+		"gcw_foley_metal_config"
+		"gcw_foley_metal"
+		"wok_foley_stone_config"
+		"wok_foley_stone"
+		"wok_foley_metal_config"
+		"wok_foley_metal"
+		"tan1cross_foley"
+	}
+}

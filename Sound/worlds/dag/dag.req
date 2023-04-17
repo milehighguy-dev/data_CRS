@@ -1,16 +1,15 @@
 ucft
 {
-    REQN
-    {
-        "str"
-        "align=2048"
-        "dag1"
-
-    }
-    REQN
-    {
-        "lvl"
-        "dag1cw"
-        "dag1gcw"
-    }
- }
+	REQN
+	{
+		"str"
+		"align=2048"
+		"dag1"
+	}
+	REQN
+	{
+		"lvl"
+		"dag1cross"
+		"dag1cross_gcw"
+	}
+}

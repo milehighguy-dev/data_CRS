@@ -362,8 +362,8 @@ function SetupSounds(attackingTeamName, defendingTeamName, planetName )
     -- load common sounds, attacking team sounds, and defending team sounds
     -- hopefully they contain everything we need!
     --ReadDataFile("dc:sound\\gdb.lvl;commonsound")
-    ReadDataFile("dc:sound\\gdb.lvl;" .. attackingTeamName)
-    ReadDataFile("dc:sound\\gdb.lvl;" .. defendingTeamName)
+    --ReadDataFile("dc:sound\\gdb.lvl;" .. attackingTeamName)
+    --ReadDataFile("dc:sound\\gdb.lvl;" .. defendingTeamName)
 
     -- example values "imp", "all", "yav"
     -- attacker is 1 defender is 2
@@ -401,6 +401,11 @@ function SetupSounds(attackingTeamName, defendingTeamName, planetName )
         AudioStreamAppendSegments("sound\\global.lvl",  attackingTeamName .. "_unit_vo_quick", voiceQuick)
 
     end
+
+    if planetName == "tat1" or planetName == "tat2" or planetName == "tat3" then
+        planetName = "tat"
+    end
+
     SetBleedingVoiceOver(2, 2, defendingTeamName .. "_off_com_report_us_overwhelmed", 1)
     SetBleedingVoiceOver(2, 1, defendingTeamName .. "_off_com_report_enemy_losing",   1)
     SetBleedingVoiceOver(1, 2, attackingTeamName .. "_off_com_report_enemy_losing",   1)
@@ -446,8 +451,8 @@ function addDynamicSides(environmentName, worldName)
     AddSide(2, defendingTeamName, environmentName)
     print("addDynamicSides, added team 2")
 
-    --SetupSounds(attackingTeamName, defendingTeamName, worldName)
-    --print("addDynamicSides, loaded sounds")
+    SetupSounds(attackingTeamName, defendingTeamName, worldName)
+    print("addDynamicSides, loaded sounds")
 
 end
 

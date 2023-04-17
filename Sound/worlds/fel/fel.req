@@ -1,17 +1,15 @@
 ucft
 {
-    REQN
-    {
-        "str"
-        "align=2048"
-        "fel1"
-
-    }
-    REQN
-    {
-        "lvl"
-        "fel1cw"
-        "fel1gcw"
-
-    }
- }
+	REQN
+	{
+		"str"
+		"align=2048"
+		"fel1"
+	}
+	REQN
+	{
+		"lvl"
+		"fel1cross"
+		"fel1cross_gcw"
+	}
+}

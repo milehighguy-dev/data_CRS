@@ -1,0 +1,53 @@
+ucft
+{
+	REQN
+	{
+		"bnk"
+		"align=2048"
+		"uta1cross"
+	}
+
+	REQN
+	{
+		"config"
+		"global_world"
+		"uta_objective_vo"
+		"rep_unit_vo"
+		"cis_unit_vo"
+		"all_unit_vo"
+		"imp_unit_vo"
+		"global_vo"
+		"exp_obj"
+		"exp_obj_large"
+		"utacross_music_config"
+		"utacross_music"
+		"uta1"
+		"wok_vo"
+		"cis_unit"
+		"rep_unit"
+		"all_unit"
+		"imp_unit"
+		"cw_foley_stone_config"
+		"cw_foley_stone"
+		"cw_foley_metal_config"
+		"cw_foley_metal"
+		"gcw_foley_stone_config"
+		"gcw_foley_stone"
+		"gcw_foley_metal_config"
+		"gcw_foley_metal"
+		"wok_foley_stone_config"
+		"wok_foley_stone"
+		"wok_foley_metal_config"
+		"wok_foley_metal"
+		"wok_foley_waterdeep_config"
+		"wok_foley_water"
+		"uta1cross_foley"
+		"cis_hover_aat"
+		"rep_hover_fightertank"
+		"cis_tread_snailtank"
+		"rep_fly_gunship"
+		"rep_walk_atrt"
+		"all_hover_combatspeeder"
+		"imp_hover_fightertank"
+	}
+}

@@ -4,14 +4,12 @@ ucft
 	{
 		"str"
 		"align=2048"
-		"end1gcw_emt"
-		"end1gcw"
-
-
+		"end1cross_emt"
+		"end1cross"
 	}
 	REQN
 	{
 		"lvl"
-		"end1gcw"
+		"end1cross"
 	}
- }
+}

@@ -1,0 +1,1094 @@
+// ----------------------------------------- KAS Music -----------------------------------
+
+// ----------------- KAS Objective Music ----------------------
+
+SoundStream()
+{
+    Name("rep_kas_amb_obj1_3_explore");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGeo01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepCor01_Act01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_fallback_01");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepKam01_Amb01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+
+SoundStream()
+{
+    Name("rep_kas_amb_act_01");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("cw_music");
+    SegmentList()
+    {
+
+        Segment("RepUta01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("CISFel01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("CISGen_Veh05_lp", 1.0, 0.0, 0.0);        
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_act_02");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+    	Segment("AllGen_Veh01_lp", 1.0, 0.0, 0.0);
+        Segment("CISGeo01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepCor01_Act02_lp", 1.0, 0.0, 0.0);
+
+    }
+}
+
+
+// ----------------- KAS REP Music ----------------------
+
+SoundStream()
+{
+    Name("rep_kas_amb_start");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepFel01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKas01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISFel01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("RepUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepMus02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKas01_Amb01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_middle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISFel01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("CISFel01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("RepUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepMus02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISJed01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepFel01_Act01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_end");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepFel01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISGeo01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("CISKam02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("RepCor01_Act04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_victory");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("rep_victory", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_kas_amb_defeat");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("rep_defeat", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_vehicle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepUta01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("RepGen_Veh03_lp", 1.0, 0.0, 0.0);
+        Segment("RepGen_Veh04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- KAS CIS Music ----------------------
+
+SoundStream()
+{
+    Name("cis_kas_amb_start");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepFel01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKas01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISFel01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("RepUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepMus02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKas01_Amb01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_kas_amb_middle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISFel01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("CISFel01_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("RepUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepMus02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISJed01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISUta01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("RepFel01_Act01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_kas_amb_end");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepFel01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISGeo01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("CISKam02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("RepCor01_Act04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_kas_amb_victory");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("cis_victory", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_kas_amb_defeat");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("cis_defeat", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_vehicle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGen_Veh02_lp", 1.0, 0.0, 0.0);
+        Segment("CISGen_Veh05_lp", 1.0, 0.0, 0.0);
+        Segment("CISCor01_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- CW Hero Music ----------------------  
+
+SoundStream()
+{
+    Name("rep_hero_secura_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_hero_Mundi_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_hero_Anakin_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar03_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_hero_Windu_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_hero_ObiWan_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar05_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("rep_hero_Yoda_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar06_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_hero_Dooku_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGen_HeroChar01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_hero_Maul_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGen_HeroChar02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_hero_Grievous_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGen_HeroChar03_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("cis_hero_Jango_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("CISGen_HeroChar04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- KAS HUNT REP Music ----------------------
+
+SoundStream()
+{
+    Name("rep_kas_amb_hunt");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepKas01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKam01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepFel01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISKam02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISGeo01_Amb01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+
+
+// ----------------- KAS HUNT CIS Music ----------------------
+
+SoundStream()
+{
+    Name("cis_kas_amb_hunt");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("cw_music");
+    SegmentList()
+    {
+        Segment("RepKas01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepKam01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("RepFel01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("CISKam02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("CISGeo01_Amb01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- KAS IMP Music ----------------------
+
+SoundStream()
+{
+    Name("imp_kas_amb_start");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllYav02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpHot01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("ImpDag01_Amb02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_kas_amb_middle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllDea01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllEnd01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpHot01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav01_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_kas_amb_end");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpTan01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpEnd01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllDag01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act01_lp", 1.0, 0.0, 0.0);
+
+    }
+}
+
+SoundStream()
+{
+    Name("imp_kas_amb_victory");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("imp_victory", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_kas_amb_defeat");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("imp_defeat", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_kas_amb_vehicle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpGen_Veh02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpTan01_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- KAS ALL Music ----------------------
+
+SoundStream()
+{
+    Name("all_kas_amb_start");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllYav02_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpHot01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("ImpDag01_Amb02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_kas_amb_middle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllDea01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllEnd01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpHot01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("AllYav01_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_kas_amb_end");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpTan01_Act01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpEnd01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("AllDag01_Amb01_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_kas_amb_victory");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("all_victory", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_kas_amb_defeat");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(0);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("all_defeat", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_kas_amb_vehicle");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(3);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllGen_Veh01_lp", 1.0, 0.0, 0.0);
+        Segment("AllGen_Veh05_lp", 1.0, 0.0, 0.0);
+        Segment("AllGen_Veh03_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- GCW Hero Music ----------------------  
+
+SoundStream()
+{
+    Name("imp_hero_Palpatine_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpGen_HeroChar01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_hero_Vader_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpGen_HeroChar02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("imp_hero_Boba_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpGen_HeroChar03_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_hero_Chewbacca_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllYav01_Act01_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_hero_BenKenobi_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("RepGen_HeroChar05_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_hero_Luke_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllGen_HeroChar03_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_hero_Han_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllGen_HeroChar04_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+SoundStream()
+{
+    Name("all_hero_Leia_lp");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("AllGen_HeroChar05_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+// ----------------- KAS HUNT IMP Music ----------------------
+
+SoundStream()
+{
+    Name("imp_kas_amb_hunt");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpDag01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("ImpEnd01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}
+
+
+
+// ----------------- KAS HUNT ALL Music ----------------------
+
+SoundStream()
+{
+    Name("all_kas_amb_hunt");
+    Pitch(1.0);
+    PitchDev(0.0);
+    Gain(1.0);
+    GainDev(0.0);
+    ReverbGain(0.0);
+    Bus("ingamemusic");
+    Looping(1);
+    Pan(0.0);
+    Mode3D(0);
+    CyclePlayback(2);
+    Stream("gcw_music");
+    SegmentList()
+    {
+        Segment("ImpDag01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav01_Act03_lp", 1.0, 0.0, 0.0);
+        Segment("ImpEnd01_Amb02_lp", 1.0, 0.0, 0.0);
+        Segment("ImpYav02_Act02_lp", 1.0, 0.0, 0.0);
+    }
+}

@@ -1,15 +1,14 @@
 ucft
 {
-    REQN
-    {
-        "str"
-        "align=2048"
-        "dea1"
-    }
-    REQN
-    {
-        "lvl"
-        "dea1gcw"
-        "dea1cw"
-    }
- }
+	REQN
+	{
+		"str"
+		"align=2048"
+		"dea1"
+	}
+	REQN
+	{
+		"lvl"
+		"dea1cross"
+	}
+}

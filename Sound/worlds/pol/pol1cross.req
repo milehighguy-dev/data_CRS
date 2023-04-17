@@ -1,0 +1,48 @@
+ucft
+{
+	REQN
+	{
+		"bnk"
+		"align=2048"
+		"pol1cross"
+	}
+
+	REQN
+	{
+		"config"
+		"global_world"
+		"pol_objective_vo"
+		"rep_unit_vo"
+		"cis_unit_vo"
+		"all_unit_vo"
+		"imp_unit_vo"
+		"global_vo"
+		"exp_obj"
+		"exp_obj_large"
+		"polcross_music_config"
+		"polcross_music"
+		"pol1"
+		"wok_vo"
+		"cis_unit"
+		"rep_unit"
+		"all_unit"
+		"imp_unit"
+		"cw_foley_stone_config"
+		"cw_foley_stone"
+		"cw_foley_metal_config"
+		"cw_foley_metal"
+		"gcw_foley_stone_config"
+		"gcw_foley_stone"
+		"gcw_foley_metal_config"
+		"gcw_foley_metal"
+		"wok_foley_stone_config"
+		"wok_foley_stone"
+		"wok_foley_metal_config"
+		"wok_foley_metal"
+		"pol1cross_foley"
+		"cis_hover_aat"
+		"rep_hover_fightertank"
+		"all_hover_combatspeeder"
+		"imp_hover_fightertank"
+	}
+}

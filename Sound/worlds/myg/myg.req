@@ -1,17 +1,14 @@
 ucft
 {
-    REQN
-    {
-        "str"
-        "align=2048"
-        "myg1"
-
-    }
-    REQN
-    {
-        "lvl"
-        "myg1cw"
-        "myg1gcw"
-
-    }
- }
+	REQN
+	{
+		"str"
+		"align=2048"
+		"myg1"
+	}
+	REQN
+	{
+		"lvl"
+		"myg1cross"
+	}
+}

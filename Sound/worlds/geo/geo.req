@@ -4,11 +4,11 @@ ucft
 	{
 		"str"
 		"align=2048"
-		"geo1cw"
+		"geo1cross"
 	}
 	REQN
 	{
 		"lvl"
-		"geo1cw"
+		"geo1cross"
 	}
  }

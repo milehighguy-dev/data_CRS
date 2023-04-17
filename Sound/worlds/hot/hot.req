@@ -4,12 +4,11 @@ ucft
 	{
 		"str"
 		"align=2048"
-		"hot1gcw"
-
+		"hot1cross"
 	}
 	REQN
 	{
 		"lvl"
-		"hot1gcw"
+		"hot1cross"
 	}
- }
+}

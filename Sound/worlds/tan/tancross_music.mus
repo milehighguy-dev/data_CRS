@@ -1,0 +1,615 @@
+// ----------------------------------------- TAN Music -----------------------------------
+
+// ----------------- TAN REP Music ----------------------
+
+Music()
+{
+    Name("rep_tan_amb_start");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("rep_tan_amb_start");
+}
+
+Music()
+{
+    Name("rep_tan_amb_middle");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("rep_tan_amb_middle");
+}
+
+Music()
+{
+    Name("rep_tan_amb_end");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(15.0);
+    SoundStream("rep_tan_amb_end");
+}
+
+Music()
+{
+    Name("rep_tan_amb_victory");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("rep_tan_amb_victory");
+}
+
+Music()
+{
+    Name("rep_tan_amb_defeat");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("rep_tan_amb_defeat");
+}
+
+Music()
+{
+    Name("rep_vehicle");
+    Priority(2.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(10.0);
+    SoundStream("rep_tan_amb_vehicle");
+}
+
+// ----------------- TAN CIS Music ----------------------
+
+Music()
+{
+    Name("cis_tan_amb_start");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("cis_tan_amb_start");
+}
+
+Music()
+{
+    Name("cis_tan_amb_middle");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("cis_tan_amb_middle");
+}
+
+Music()
+{
+    Name("cis_tan_amb_end");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(15.0);
+    SoundStream("cis_tan_amb_end");
+}
+
+Music()
+{
+    Name("cis_tan_amb_victory");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("cis_tan_amb_victory");
+}
+
+Music()
+{
+    Name("cis_tan_amb_defeat");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("cis_tan_amb_defeat");
+}
+
+Music()
+{
+    Name("cis_vehicle");
+    Priority(2.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(10.0);
+    SoundStream("cis_tan_amb_vehicle");
+}
+
+// ----------------- CW Hero Music ----------------------  
+
+Music()
+{
+    Name("rep_hero_secura_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_secura_lp");
+}
+
+Music()
+{
+    Name("rep_hero_Mundi_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_Mundi_lp");
+}
+
+Music()
+{
+    Name("rep_hero_Anakin_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_Anakin_lp");
+}
+
+Music()
+{
+    Name("rep_hero_Windu_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_Windu_lp");
+}
+
+Music()
+{
+    Name("rep_hero_ObiWan_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_ObiWan_lp");
+}
+
+Music()
+{
+    Name("rep_hero_Yoda_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("rep_hero_Yoda_lp");
+}
+
+Music()
+{
+    Name("cis_hero_Dooku_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("cis_hero_Dooku_lp");
+}
+
+Music()
+{
+    Name("cis_hero_Maul_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("cis_hero_Maul_lp");
+}
+
+Music()
+{
+    Name("cis_hero_Grievous_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("cis_hero_Grievous_lp");
+}
+
+Music()
+{
+    Name("cis_hero_Jango_lp");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("cis_hero_Jango_lp");
+}
+
+// ----------------- TAN Objective Music ----------------------
+
+Music()
+{
+    Name("imp_tan_amb_obj1_explore");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(15.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_amb_obj1_explore");
+}
+
+Music()
+{
+    Name("imp_tan_amb_obj2_explore");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(3.0);
+    MinPlaybackTime(10.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_amb_obj2_explore");
+}
+
+Music()
+{
+    Name("imp_tan_amb_action_01");
+    Priority(5.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(15.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_amb_action_01");
+}
+
+Music()
+{
+    Name("imp_tan_objComplete_01");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(0.0);
+    MinPlaybackTime(16.0);
+    MaxPlaybackTime(17.0);
+    MinInactiveTime(60.0);
+    SoundStream("imp_tan_objComplete_01");
+}
+
+Music()
+{
+    Name("imp_tan_amb_codes_retrieve");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(15.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_amb_codes_retrieve");
+}
+
+Music()
+{
+    Name("imp_tan_amb_codes_return");
+    Priority(5.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(15.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_amb_codes_return");
+}
+
+Music()
+{
+    Name("imp_tan_objComplete_02");
+    Priority(8.0);
+    FadeInTime(0.0);
+    FadeOutTime(0.0);
+    MinPlaybackTime(17.0);
+    MaxPlaybackTime(18.0);
+    MinInactiveTime(60.0);
+    SoundStream("imp_tan_objComplete_02");
+}
+
+Music()
+{
+    Name("imp_tan_immVict_01");
+    Priority(4.0);
+    FadeInTime(0.0);
+    FadeOutTime(3.0);
+    MinPlaybackTime(15.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_tan_immVict_01");
+}
+
+// ----------------- TAN ALL Music ----------------------
+
+Music()
+{
+    Name("all_tan_amb_start");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("all_tan_amb_start");
+}
+
+Music()
+{
+    Name("all_tan_amb_middle");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("all_tan_amb_middle");
+}
+
+Music()
+{
+    Name("all_tan_amb_end");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(15.0);
+    SoundStream("all_tan_amb_end");
+}
+
+Music()
+{
+    Name("all_tan_amb_victory");
+    Priority(9.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("all_tan_amb_victory");
+}
+
+Music()
+{
+    Name("all_tan_amb_defeat");
+    Priority(9.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("all_tan_amb_defeat");
+}
+
+Music()
+{
+    Name("all_vehicle");
+    Priority(2.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(10.0);
+    SoundStream("all_tan_amb_vehicle");
+}
+
+// ----------------- TAN IMP Music ----------------------
+
+Music()
+{
+    Name("imp_tan_amb_start");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("imp_tan_amb_start");
+}
+
+Music()
+{
+    Name("imp_tan_amb_middle");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(180.0);
+    MinInactiveTime(15.0);
+    SoundStream("imp_tan_amb_middle");
+}
+
+Music()
+{
+    Name("imp_tan_amb_end");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(15.0);
+    SoundStream("imp_tan_amb_end");
+}
+
+Music()
+{
+    Name("imp_tan_amb_victory");
+    Priority(9.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("imp_tan_amb_victory");
+}
+
+Music()
+{
+    Name("imp_tan_amb_defeat");
+    Priority(9.0);
+    FadeInTime(0.0);
+    FadeOutTime(5.0);
+    MinPlaybackTime(3.0);
+    MaxPlaybackTime(360.0);
+    MinInactiveTime(35.0);
+    SoundStream("imp_tan_amb_defeat");
+}
+
+Music()
+{
+    Name("imp_vehicle");
+    Priority(1.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.5);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(150.0);
+    MinInactiveTime(10.0);
+    SoundStream("imp_tan_amb_vehicle");
+}
+
+// ----------------- GCW Hero Music ---------------------- 
+
+Music()
+{
+    Name("imp_hero_Palpatine_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_hero_Palpatine_lp");
+}
+
+Music()
+{
+    Name("imp_hero_Vader_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_hero_Vader_lp");
+}
+
+Music()
+{
+    Name("imp_hero_Boba_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("imp_hero_Boba_lp");
+}
+
+Music()
+{
+    Name("all_hero_Chewbacca_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("all_hero_Chewbacca_lp");
+}
+
+Music()
+{
+    Name("all_hero_BenKenobi_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("all_hero_BenKenobi_lp");
+}
+
+Music()
+{
+    Name("all_hero_Luke_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("all_hero_Luke_lp");
+}
+
+Music()
+{
+    Name("all_hero_Han_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("all_hero_Han_lp");
+}
+
+Music()
+{
+    Name("all_hero_Leia_lp");
+    Priority(7.0);
+    FadeInTime(0.0);
+    FadeOutTime(1.0);
+    MinPlaybackTime(20.0);
+    MaxPlaybackTime(600.0);
+    MinInactiveTime(20.0);
+    SoundStream("all_hero_Leia_lp");
+}

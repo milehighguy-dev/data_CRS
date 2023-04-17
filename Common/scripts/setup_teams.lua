@@ -35,8 +35,8 @@ function SetupTeams(sides)
         end
 
         -- add hero class if available
-        if side[hero] then
-            AddHeroClass(side[hero])
+        if side["hero"] then
+            SetHeroClass(team, side["hero"])
         end
     end
 end
