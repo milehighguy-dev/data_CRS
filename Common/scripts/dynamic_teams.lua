@@ -2,7 +2,7 @@
 
 
 
-function AddSide(teamNumber, teamName, environmentName)
+function AddSide(teamNumber, teamName, heroName, environmentName)
 
     local sides = {
         all = {
@@ -342,6 +342,11 @@ function AddSide(teamNumber, teamName, environmentName)
 
     --print("loading side " .. tostring(side) .. " with environment " .. tostring(environment))
 
+    if heroName then
+        table.insert(environment.lvl.children, heroName)
+        environment.setup_team.hero = heroName
+    end
+
     ReadDataFile(environment.lvl.file, unpack(environment.lvl.children))
     SetupTeams{[teamName] = environment.setup_team}
 
@@ -431,14 +436,18 @@ end
 function addDynamicSides(environmentName, worldName)
 
     local attackingTeamName = nil
+    local attackingHeroName = nil
     local defendingTeamName = nil
+    local defendingHeroName = nil
     local teamItems = nil
 
     if ScriptCB_IsMissionSetupSaved() then
         local missionSetup = ScriptCB_LoadMissionSetup()
         teamItems = missionSetup.units -- Galactic Conquest Only (for now)
         attackingTeamName = missionSetup.attackerTeam
+        attackingHeroName = missionSetup.attackerHero
         defendingTeamName = missionSetup.defenderTeam
+        defendingHeroName = missionSetup.defenderHero
         worldName = missionSetup.world or worldName
     end
 
@@ -446,9 +455,9 @@ function addDynamicSides(environmentName, worldName)
     print("attacker is " .. tostring(attackingTeamName) .. " defender is " .. tostring(defendingTeamName))
 
     --for mission scripts attacker is 1 and defender 2
-    AddSide(1, attackingTeamName, environmentName)
+    AddSide(1, attackingTeamName, attackingHeroName,  environmentName)
     print("addDynamicSides, added team 1")
-    AddSide(2, defendingTeamName, environmentName)
+    AddSide(2, defendingTeamName, defendingHeroName, environmentName)
     print("addDynamicSides, added team 2")
 
     SetupSounds(attackingTeamName, defendingTeamName, worldName)

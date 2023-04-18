@@ -1,24 +1,70 @@
-
-
-
 --- define global to store the team faction choices
 
 gCrossEra = {
     attackerName = "",
     defenderName = "",
+    attackerHero = "",
+    defenderHero = "",
+    attackerHeroes = {},
+    defenderHeroes = {},
     factions = {
-        { name = "rep", string = "common.sides.rep.name" },
-        { name = "cis", string = "common.sides.cis.name" },
-        { name = "all", string = "common.sides.all.name" },
-        { name = "imp", string = "common.sides.imp.name" }
+        {
+            name = "rep",
+            string = "common.sides.rep.name",
+            heroes = {
+                "rep_hero_aalya",
+                "rep_hero_anakin",
+                "rep_hero_cloakedanakin",
+                "rep_hero_kiyadimundi",
+                "rep_hero_macewindu",
+                "rep_hero_macewindu_obi",
+                "rep_hero_obiwan",
+                "rep_hero_yoda"
+            }
+        },
+        {
+            name = "cis",
+            string = "common.sides.cis.name",
+            heroes = {
+                "cis_hero_countdooku",
+                "cis_hero_darthmaul",
+                "cis_hero_grievous",
+                "cis_hero_jangofett"
+            }
+        },
+        {
+            name = "all",
+            string = "common.sides.all.name",
+            heroes = {
+                "all_hero_chewbacca",
+                "all_hero_hansolo_storm",
+                "all_hero_hansolo_tat",
+                "all_hero_leia",
+                "all_hero_luke_jedi",
+                "all_hero_luke_pilot",
+                "all_hero_luke_storm",
+                "all_hero_luke_tat"
+            }
+        },
+        {
+            name = "imp",
+            string = "common.sides.imp.name",
+            heroes = {
+                "imp_hero_bobafett",
+                "imp_hero_darthvader",
+                "imp_hero_emperor"
+            }
+        }
     }
 }
 
 gCrossEra.attackerName = gCrossEra.factions[1].name
+gCrossEra.attackerHeroes = gCrossEra.factions[1].heroes
+gCrossEra.attackerHero = gCrossEra.factions[1].heroes[1]
+
 gCrossEra.defenderName = gCrossEra.factions[2].name
-
-
-
+gCrossEra.defenderHeroes = gCrossEra.factions[2].heroes
+gCrossEra.defenderHero = gCrossEra.factions[2].heroes[1]
 
 --these functions reference the page tags
 -- ifs_io_changeFunc
@@ -32,24 +78,43 @@ add_crs_buttons = function()
 
     print("DEBUG: overriding ifs_instant_options buttons")
 
-    --TODO: pass faction name to mission script
-    -- use remaster DB ?
-    -- use mission setup?
-    -- use save file?
+    --TODO dropdown length is only based on the initial size...
 
     --choose what setting to set based on selection
     --called when you change a radio button
     local original_ifs_io_changeFunc = ifs_io_changeFunc
     ifs_io_changeFunc = function(form, element)
         original_ifs_io_changeFunc(form, element)
-        local this = ifs_instant_options
+        --local this = ifs_instant_options
 
         print("DEBUG: buttons: ifs_io_changeFunc")
         -- cross era opts
         if (element.tag == "cross_team1") then
+
             gCrossEra.attackerName = gCrossEra.factions[element.selValue].name
+            gCrossEra.attackerHeroes = gCrossEra.factions[element.selValue].heroes
+            --update the hero options
+            ifs_io_changeFunc(form, form.elements["cross_team1_hero"])
+
         elseif (element.tag == "cross_team2") then
+
             gCrossEra.defenderName = gCrossEra.factions[element.selValue].name
+            gCrossEra.defenderHeroes = gCrossEra.factions[element.selValue].heroes
+            --update the hero options
+            ifs_io_changeFunc(form, form.elements["cross_team2_hero"])
+
+        elseif (element.tag == "cross_team1_hero") then
+
+            form.elements["cross_team1_hero"].values = gCrossEra.attackerHeroes
+            Form_SetValues(form) -- do this otherwise you have to click for the options to update
+            gCrossEra.attackerHero = gCrossEra.attackerHeroes[element.selValue]
+
+        elseif (element.tag == "cross_team2_hero") then
+
+            form.elements["cross_team2_hero"].values = gCrossEra.defenderHeroes
+            Form_SetValues(form)
+            gCrossEra.defenderHero = gCrossEra.defenderHeroes[element.selValue]
+
         end
     end
 
@@ -64,7 +129,7 @@ add_crs_buttons = function()
         local val = nil
         local mySliderString = nil
 
-        if( tag == "cross_team1") then
+        if (tag == "cross_team1") then
 
             val = 1
             local numElements = table.getn(gCrossEra.factions)
@@ -74,7 +139,7 @@ add_crs_buttons = function()
                 end
             end
 
-        elseif ( tag == "cross_team2") then
+        elseif (tag == "cross_team2") then
 
             val = 2
             local numElements = table.getn(gCrossEra.factions)
@@ -83,7 +148,22 @@ add_crs_buttons = function()
                     val = i
                 end
             end
-
+        elseif ( tag == "cross_team1_hero") then
+            val = 1
+            local numElements = table.getn(gCrossEra.attackerHeroes)
+            for i = 1, numElements do
+                if gCrossEra.attackerHeroes[i] == gCrossEra.attackerHero then
+                    val = i
+                end
+            end
+        elseif ( tag == "cross_team2_hero") then
+            val = 1
+            local numElements = table.getn(gCrossEra.defenderHeroes)
+            for i = 1, numElements do
+                if gCrossEra.defenderHeroes[i] == gCrossEra.defenderHero then
+                    val = i
+                end
+            end
         end
 
         if (val) then
@@ -110,8 +190,6 @@ add_crs_buttons = function()
 
         local this = screen
 
-
-
         local factions = { }
         for _, entry in gCrossEra.factions do
             table.insert(factions, entry.string)
@@ -128,6 +206,16 @@ add_crs_buttons = function()
             tagTable.control = "dropdown"
             tagTable.selValue = 2
             tagTable.values = factions
+        elseif ( tagName == "cross_team1_hero") then
+            tagTable.title = "Team 1 Hero"
+            tagTable.control = "dropdown"
+            tagTable.selValue = 1
+            tagTable.values = gCrossEra.attackerHeroes
+        elseif ( tagName == "cross_team2_hero") then
+            tagTable.title = "Team 2 Hero"
+            tagTable.control = "dropdown"
+            tagTable.selValue = 1
+            tagTable.values = gCrossEra.defenderHeroes
         end
 
         if (tagTable.control ~= "radio") then
@@ -168,6 +256,23 @@ add_crs_buttons = function()
                     ShowStr = gCrossEra.factions[i].string
                 end
             end
+        elseif (Tag == "cross_team1_hero") then
+
+            local numElements = table.getn(gCrossEra.attackerHeroes)
+            for i = 1, numElements do
+                if gCrossEra.attackerHeroes[i] == gCrossEra.attackerHero then
+                    ShowStr = ScriptCB_getlocalizestr(gCrossEra.attackerHeroes[i])
+                end
+            end
+
+        elseif (Tag == "cross_team2_hero") then
+
+            local numElements = table.getn(gCrossEra.defenderHeroes)
+            for i = 1, numElements do
+                if gCrossEra.defenderHeroes[i] == gCrossEra.defenderHero then
+                    ShowStr = ScriptCB_getlocalizestr(gCrossEra.defenderHeroes[i])
+                end
+            end
 
         end
 
@@ -206,7 +311,7 @@ add_crs_buttons = function()
                 end
             end
 
-            if  (selectedIndex == numElements and iAdjust > 0)
+            if (selectedIndex == numElements and iAdjust > 0)
                     or (selectedIndex + iAdjust > numElements) then
                 gCrossEra.attackerName = gCrossEra.factions[numElements].name
             elseif (selectedIndex == 1 and iAdjust < 0)
@@ -225,7 +330,7 @@ add_crs_buttons = function()
                 end
             end
 
-            if  (selectedIndex == numElements and iAdjust > 0)
+            if (selectedIndex == numElements and iAdjust > 0)
                     or (selectedIndex + iAdjust > numElements) then
                 gCrossEra.defenderName = gCrossEra.factions[numElements].name
             elseif (selectedIndex == 1 and iAdjust < 0)
@@ -234,7 +339,8 @@ add_crs_buttons = function()
             else
                 gCrossEra.defenderName = gCrossEra.factions[selectedIndex + iAdjust]
             end
-
+        elseif (Tag == "cross_team1_hero") then
+        elseif (Tag == "cross_team2_hero") then
         end
 
         original_ifs_instant_options_fnAdjustItem(this, Tag, iAdjust)

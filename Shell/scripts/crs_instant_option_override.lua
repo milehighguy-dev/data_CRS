@@ -136,7 +136,9 @@ local override_instantOptions = function()
         title = "ifs.instantoptions.buttons.cross",
         tags = {
             "cross_team1",
-            "cross_team2"
+            "cross_team1_hero",
+            "cross_team2",
+            "cross_team2_hero"
         }
     }
     --these functions reference the page tags
@@ -175,7 +177,9 @@ local override_instantOptions = function()
         end
         missionSetup.crossEraEnabled = 1
         missionSetup.attackerTeam = gCrossEra.attackerName
+        missionSetup.attackerHero = gCrossEra.attackerHero
         missionSetup.defenderTeam = gCrossEra.defenderName
+        missionSetup.defenderHero = gCrossEra.defenderHero
         ScriptCB_SaveMissionSetup(missionSetup)
         print("DEBUG: mission setup saved!")
 
