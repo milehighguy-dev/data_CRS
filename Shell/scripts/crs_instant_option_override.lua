@@ -21,7 +21,11 @@
 --Load the code that will define the buttons on the new option page
 ScriptCB_DoFile("crs_option_buttons")
 
+--it works!
 
+--TODO fix tab y spacing
+--TODO fix localization
+--TODO fix sounds not munging properly
 
 print("DEBUG: loaded crs_instant_option_override.lua")
 

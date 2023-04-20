@@ -106,16 +106,64 @@ add_crs_buttons = function()
         elseif (element.tag == "cross_team1_hero") then
 
             form.elements["cross_team1_hero"].values = gCrossEra.attackerHeroes
-            Form_SetValues(form) -- do this otherwise you have to click for the options to update
             gCrossEra.attackerHero = gCrossEra.attackerHeroes[element.selValue]
+            -- do this otherwise you have to click for the options to update
+            -- also updates the length of the dropdown
+            --custom_form_updateDropdown(form, "cross_team1_hero")
 
         elseif (element.tag == "cross_team2_hero") then
 
             form.elements["cross_team2_hero"].values = gCrossEra.defenderHeroes
-            Form_SetValues(form)
             gCrossEra.defenderHero = gCrossEra.defenderHeroes[element.selValue]
+            --custom_form_updateDropdown(form, "cross_team2_hero")
 
         end
+    end
+
+    -- home made function to update the length of the list in the dropdown
+    -- based on Form_CreateVertical
+    custom_form_updateDropdown = function(form, dropDownKey)
+
+        --reset these values
+        local maxDropdownItems = 10
+        form.dropdowns[dropDownKey].listbox.Layout.showcount = maxDropdownItems
+        form.dropdowns[dropDownKey].listbox.Layout.slider = 1
+        -- change to slider if needed
+        local count = table.getn(form.elements[dropDownKey].values)
+        if( count > 0 and count < form.dropdowns[dropDownKey].listbox.Layout.showcount ) then
+            form.dropdowns[dropDownKey].listbox.Layout.showcount = count
+            form.dropdowns[dropDownKey].listbox.Layout.slider = nil
+        end
+
+        local listboxheight = form.dropdowns[dropDownKey].listbox.Layout.showcount * (form.dropdowns[dropDownKey].listbox.Layout.yHeight + form.dropdowns[dropDownKey].listbox.Layout.ySpacing) + 30
+
+        form.dropdowns[dropDownKey].listbox.height = listboxheight
+
+        --local elementWidth = layout.width or 300
+        --dropdown.Layout.showcount.width = elementWidth * 0.9
+        --ListManager_fnInitList(form.dropdowns[dropDownKey].listbox, form.dropdowns[dropDownKey].listbox.Layout)
+        form.dropdowns[dropDownKey].expanded = false
+        --dropdown.tag = layout.elements[i].tag
+        local index = form.elements[form.elements[dropDownKey].tag].selValue;
+        form.dropdowns[dropDownKey].listbox.Layout.SelectedIdx = index
+        form.dropdowns[dropDownKey].listbox.Layout.CursorIdx = index
+        form.dropdowns[dropDownKey].listbox.Layout.FirstShownIdx = index
+        ListManager_fnFillContents(form.dropdowns[dropDownKey].listbox,form.elements[dropDownKey].values or {},form.dropdowns[dropDownKey].listbox.Layout)
+        IFObj_fnSetVis(form.dropdowns[dropDownKey].listbox,nil)
+
+        Form_SetValues(form)
+        ---- fix zordering on all the dropdowns.
+        --local i = form.buttons[dropDownKey].y / 600 * 255
+        --IFObj_fnSetZPos(form.dropdowns[dropDownKey], i)
+
+        --print("DEBUG: AFTER: printing dropdown listbox for " .. tostring(dropDownKey))
+        tprint(form.elements[dropDownKey])
+        print("\n\n\n")
+        tprint(form.dropdowns[dropDownKey])
+
+        --form.elements[dropDownKey].values
+        --form.dropdowns[dropDownKey].listbox.Contents
+
     end
 
     --choose which selection to display based on what was set
