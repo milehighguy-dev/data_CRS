@@ -11,4 +11,6 @@
 
  requires the v1.3 patch or higher
 
+NOTE: the cross era sound lvls are not munging, please push a fix
+
  Thanks, Anakin, BAD_AL, S1thK3nny, SleepKiller, and Rayman1103
