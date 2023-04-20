@@ -4,19 +4,6 @@
 --- DateTime: 3/29/2023 8:21 PM
 ---
 
---- My intent with this script is to add another option screen to instant action
---- I want to eventually configure options for a new era mod
---- "Cross Era" will allow for scenarios like Empire vs Droids, Clones vs Rebels, etc..
---- the player will be able to select which sides fight
-
--- To install: copy the Shell Folder into your mod project
--- munge with "Shell" checked
--- find the shell.lvl in the _LVL_PC folder in your mod project
--- rename it to custom_gc_6.lvl
--- move it to the game directory: GameData/data/_lvl_pc
-
--- requires the v1.3 patch or higher
-
 
 --Load the code that will define the buttons on the new option page
 ScriptCB_DoFile("crs_option_buttons")
